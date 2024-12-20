@@ -1,0 +1,134 @@
+/* Main Content Header */
+.main-header {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+/* Toggle Selector in Main Header */
+.shopee-toggle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-option {
+    flex: 1;
+    padding: 8px 15px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #555;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    outline: none;
+}
+
+.toggle-option:first-child {
+    border-radius: 8px 0 0 8px;
+    border-right: none;
+}
+
+.toggle-option:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+.toggle-option.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.toggle-option:hover {
+    background-color: #e6f3ff;
+    color: #007bff;
+}
+
+#dynamic-content {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.tab {
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    font-weight: bold;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    color: #ff5722;
+    border-color: #ff5722;
+}
+
+.tab:hover {
+    color: #ff5722;
+}
+
+.tab-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 8px 15px;
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #e64a19;
+}
+
+/* Tab Content */
+.tab-content {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+

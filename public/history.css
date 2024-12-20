@@ -1,0 +1,38 @@
+.back-icon-image {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%; /* Makes the image round */
+    padding: 3px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.back-icon:hover .back-icon-image {
+    background-color: #eeecec; /* Light gray background */
+    transform: scale(1.1);
+}
+
+.back-icon:active .back-icon-image {
+    background-color: #ebebeb; /* Darker gray on click */
+    transform: scale(0.95);
+}
+.log-container {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+
+        border: 2px solid #ccc; /* Light gray solid border */
+        padding: 20px; /* Add padding inside the panel */
+        border-radius: 8px; /* Optional: Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+        background-color: #fff; /* Optional: Set a white background for contrast */
+  }
+
+.log-title {
+    font-size: 24px; /* Set a large font size */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Dark gray text */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add space below the title */
+  }

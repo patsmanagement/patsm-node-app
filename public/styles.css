@@ -1,0 +1,719 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Disable horizontal overflow */
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Quicksand-VariableFont_wght'; /* Name you want to use for the font */
+    src: url('/fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+/* Sidebar */
+.sidebar {
+    position: fixed; /* Locks the sidebar in place */
+    top: 0;
+    left: 0;
+    width: 250px; /* Sidebar width */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #21588b; /* Original background color */
+    padding: 40px; /* Original padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000; /* Ensure it stays above other elements */
+    border-right: 1px solid #ccc; /* Optional: add a right border */
+    font-family: 'Quicksand-VariableFont_wght', Sans-Serif;
+    color: #ffffff;
+}
+
+h2 {
+    text-shadow: 2px 2px #000000; 
+}
+
+p {
+    text-shadow: 2px 2px #000000;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc; /* Light gray line */
+    width: 100%; /* Adjust the width to fit your design */
+    margin: 10px auto; /* Add some spacing around the line */
+}
+.profile-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    text-align: left;
+    padding: 10px;
+    background-color: #21588b;
+    border-radius: 10px;
+    text-shadow: 2px 2px #21588b;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.sidebar-icon {
+    transition: all 0.3s ease;
+}
+
+.logout {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #cc352a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Quicksand-VariableFont_wght', Sans-Serif;
+}
+
+.logout:hover {
+    background-color: #a81313;
+}
+
+header {
+    margin-bottom: 20px;
+}
+/* Main Content */
+.main-content {
+    margin-left: 280px;
+    padding: 50px;
+    background-color: #ffffff;
+    height: 100vh;
+    overflow-y: auto; /* Scrollable content if needed */
+    display: flex;
+    width: calc(100% - 280px); /* Ensure the content takes the remaining width */
+    flex-direction: column;
+    font-family: 'Quicksand-VariableFont_wght', Sans-Serif;
+}
+.history-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-right: 1px; /* Adjust spacing */
+}
+
+.history-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* WhatsApp Panels Layout */
+.whatsapp-panels {
+    display: grid;
+    grid-template-columns: 1fr; /* One column for the Chat Panel */
+    grid-template-rows: auto 1fr; /* Two rows: Chat panel, then the bottom panels */
+    gap: 100px; /* Adds space between the panels */
+    padding: 20px;
+    height: 100%;
+}
+
+/* Contact Panel Styling */
+.contact-panel {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Light shadow for depth */
+  background-color: #fff;
+  border: none; /* Remove border */
+}
+
+  /* Broadcast Panel Layout */
+.contact-header {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-bottom: 1px;
+}
+
+/* Group the buttons together */
+.contact-header-action {
+  display: flex;
+  justify-content:end;
+  gap: 5px; /* Add spacing between buttons */
+}
+
+ 
+  /* Style for the contact panel title */
+.contact-title {
+    font-size: 24px; /* Set a large font size */
+    font-weight: bold; /* Make it bold */
+    color: #333; /* Dark gray text */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add space below the title */
+  }
+  
+  
+/* Universal Search Box Styling */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff; /* Yellow background */
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-box input[type="text"] {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-family: 'Quicksand-VariableFont_wght', sans-serif;
+  flex: 1;
+  color: #333;
+}
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+  background-color: #f8f9fa;
+}
+
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #495057;
+  border: none; /* Remove column dividers */
+}
+
+table th {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+  .no-data {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+  }
+  
+  
+  .add-number-btn {
+    position: flex;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #00b126;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Quicksand-VariableFont_wght', Sans-Serif;
+  }
+
+  .add-number-btn:hover {
+    background-color: #00b126b7;
+  }
+
+  .import-contact-btn {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #20588b;    
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Quicksand-VariableFont_wght', Sans-Serif;
+  }
+  .import-contact-btn:hover {
+    background-color: #44729c;   
+
+  }
+/* Modal background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+  
+  /* Modal content */
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    margin-left: 43%;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .contact-info p {
+    margin: 5px 0;
+}
+  
+  /* Form groups */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+      width: 100%;
+      padding: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: 'Quicksand-VariableFont_wght', Sans-Serif;
+      font-weight: 500;
+  }
+  
+  /* Button group */
+  .button-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-send {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.broadcast-send-btn {
+  background-color: #28a745; /* Green background */
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px; /* Add space between Send and Edit buttons */
+  transition: background-color 0.3s ease;
+}
+
+
+.btn-cancel {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+  
+  /* Button styles */
+  .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%;
+  }
+
+  .send-btn {
+    background-color: #28a745; /* Green background */
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px; /* Add space between Send and Edit buttons */
+    transition: background-color 0.3s ease;
+}
+
+.btn-send:hover {
+  background-color: #26be4a; /* Green background */
+
+
+}
+
+.send-btn:hover {
+    background-color: #26be4a; /* Darker green on hover */
+}
+  
+  .btn-save {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-save:hover {
+  background-color: #14813a;
+}
+  
+  .btn-back {
+    background-color: #cc352a;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Close button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: black;
+  }
+  
+  .pagination {
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  /* Pagination Button Styling */
+.pagination button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  font-size: 0.8rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  color: #495057;
+  transition: background-color 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #e9ecef;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  background-color: #f1f3f5;
+  color: #adb5bd;
+}
+
+  
+  button {
+    padding: 8px 12px;
+    font-family: 'Quicksand-VariableFont_wght', Sans-Serif;
+    font-weight: 200px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  #success-message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+
+/* Button Styling for Actions */
+.edit-btn, .delete-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.edit-btn {
+  background-color: #ffa914;
+  color: #333;
+  font-weight: bold;
+}
+
+.edit-btn:hover {
+  background-color: #ffb846;
+}
+
+.delete-btn {
+  background-color: #f65c1f;
+  color: #fff;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #f78b5a;
+}
+  
+  #page-info, #broadcast-page-info {
+    font-weight: bold;
+  }
+
+/* Broadcast Panel Styling */
+.broadcast-panel {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Light shadow for depth */
+  border: none; /* Remove border */
+}
+
+/* Broadcast Panel Layout */
+.broadcast-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+.broadcast-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+/* Broadcast Action Button Styling */
+.broadcast-action-buttons button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Align action buttons in broadcast panel similarly to contact list */
+.broadcast-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Add New Row Button (aligned similarly to Add Number button) */
+#add-broadcast-btn {
+  background-color: #00b126;
+  margin-top: 22px;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+#add-broadcast-btn:hover {
+  background-color: #00b126b7;
+}
+
+/* Broadcast Modal */
+#broadcast-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+  
+/* Notification button at the top-right corner */
+.notification-wrapper {
+    position: fixed; /* Stay fixed at the top-right */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    z-index: 1000; /* Ensure it's on top of other elements */
+  
+  }
+  
+  .notification-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 70px;
+    margin-bottom: 1px;
+  }
+  
+  .notification-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 50%;
+  }
+  
+/* Initial hidden state for the panel with scaling */
+.notification-panel-dropdown {
+    display: none;
+    transform: scale(0.8); /* Slightly smaller initially */
+    opacity: 0; /* Fully transparent initially */
+    position: absolute;
+    right: 0;
+    background-color: white;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.507);
+    z-index: 1000;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 1px;
+    margin-right: 70px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for smooth scaling */
+  }
+  
+  /* When the panel is visible */
+  .notification-panel-dropdown.show {
+    display: block;
+    transform: scale(1); /* Full size */
+    opacity: 1; /* Fully opaque */
+  }
+  
+  
+  /* Notification item styling */
+  .notification-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .notification-item:last-child {
+    border-bottom: none;
+  }
+  
+  .notification-title {
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .notification-time {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  /* Scrollbar styling */
+  .notification-panel-dropdown::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .notification-panel-dropdown::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+  }
+    
+/* Notification List Styling */
+.notifications-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.notifications-list li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+/* Default icon */
+.sidebar-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* Active sidebar link style */
+.sidebar-active {
+    background-color: #ffffff; /* Highlight color */
+    color: #000000; /* Text color */
+    font-weight: bold;
+    text-shadow: 2px 2px #ffffff;
+    border-radius: 10px;
+}

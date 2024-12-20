@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shopee.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile-section">
+                <img src="/images/pats-logo.png" alt="Profile Picture" class="profile-pic">
+                <h2>Pat's Kitchen</h2>
+                <p>kitchenbypats@gmail.com
+                <hr>
+                </p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="whatsapp.html"><img src="/images/WA1.png" alt="Whatsapp icon" class="sidebar-icon whatsapp-icon"> Whatsapp</a></li>
+                    <li><a href="shopee.html" class="sidebar-active"><img src="/images/SPE.png" alt="Shopee icon" class="sidebar-icon spe-icon">Shopee</a></li>
+                    <li><a href="tokopedia.html"><img src="/images/TPD.png" alt="Tokopedia icon" class="sidebar-icon tpd-icon">Tokopedia</a></li>
+                    <li><a href="lazada.html"><img src="/images/a.png" alt="Lazada Icon" class="sidebar-icon lazada-icon"> Lazada</a></li>
+                    <li><a href="inventory.html">Inventory Management</a></li>
+                </ul>
+            </nav>
+            <button class="logout">Log Out</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="main-header">
+            <!-- Shopee Toggle Selector -->
+            <div class="shopee-toggle">
+                <button class="toggle-option active" id="pats">Pat's</button>
+                <button class="toggle-option" id="tomat">Tomat.id</button>
+            </div>
+        </header>
+
+        <!-- Dynamic Content Area -->
+        <div id="dynamic-content">
+            <!-- Initial content for Pat's Kitchen -->
+            <div class="tab-navigation">
+                <ul class="tabs">
+                    <li class="tab active" data-tab="all">Semua</li>
+                    <li class="tab" data-tab="unpaid">Belum Bayar</li>
+                    <li class="tab" data-tab="to-ship">Perlu Dikirim (1)</li>
+                    <li class="tab" data-tab="shipped">Dikirim (23)</li>
+                    <li class="tab" data-tab="completed">Selesai</li>
+                    <li class="tab" data-tab="returns">Pengembalian/Pembatalan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleOptions = document.querySelectorAll(".toggle-option");
+        const dynamicContent = document.getElementById("dynamic-content");
+
+        toggleOptions.forEach((button) => {
+            button.addEventListener("click", function () {
+                toggleOptions.forEach((btn) => btn.classList.remove("active"));
+                this.classList.add("active");
+
+                // Load dynamic content for the selected view
+                if (this.id === "pats") {
+                    dynamicContent.innerHTML = `
+                        <div class="tab-navigation">
+                            <ul class="tabs">
+                                <li class="tab active" data-tab="all">Semua</li>
+                                <li class="tab" data-tab="unpaid">Belum Bayar</li>
+                                <li class="tab" data-tab="to-ship">Perlu Dikirim (1)</li>
+                                <li class="tab" data-tab="shipped">Dikirim (23)</li>
+                                <li class="tab" data-tab="completed">Selesai</li>
+                                <li class="tab" data-tab="returns">Pengembalian/Pembatalan</li>
+                            </ul>
+                        </div>
+                    `;
+                } else if (this.id === "tomat") {
+                    dynamicContent.innerHTML = `
+                        <div class="tab-navigation">
+                            <ul class="tabs">
+                                <li class="tab active" data-tab="all">Semua</li>
+                                <li class="tab" data-tab="unpaid">Belum Bayar</li>
+                                <li class="tab" data-tab="to-ship">Perlu Dikirim (5)</li>
+                                <li class="tab" data-tab="shipped">Dikirim (10)</li>
+                                <li class="tab" data-tab="completed">Selesai</li>
+                                <li class="tab" data-tab="returns">Pengembalian/Pembatalan</li>
+                            </ul>
+                        </div>
+                    `;
+                }
+            });
+        });
+
+        // Tab navigation functionality
+        document.addEventListener("click", (e) => {
+            if (e.target.classList.contains("tab")) {
+                const tabs = e.target.parentElement.children;
+                const panes = document.querySelectorAll(".tab-pane");
+
+                // Remove active class from all tabs and panes
+                Array.from(tabs).forEach((tab) => tab.classList.remove("active"));
+                panes.forEach((pane) => pane.classList.remove("active"));
+
+                // Add active class to clicked tab and corresponding pane
+                e.target.classList.add("active");
+                document.getElementById(e.target.getAttribute("data-tab")).classList.add("active");
+            }
+        });
+    </script>
+</body>
+</html>
